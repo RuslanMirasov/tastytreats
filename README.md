@@ -1,1 +1,1 @@
-![Deployment status](./assets/status.png)
+![Project Preview](./assets/poster.png)

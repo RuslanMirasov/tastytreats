@@ -1,0 +1,15 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+.cube {
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+  }
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
