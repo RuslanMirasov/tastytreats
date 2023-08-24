@@ -1,2 +1,2 @@
-import './../js/refs.js';
+import './refs.js';
 console.log(refs.body);
