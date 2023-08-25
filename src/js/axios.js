@@ -1,1 +1,1 @@
-alert('Ssss');
+import { refs } from '../js/refs';
