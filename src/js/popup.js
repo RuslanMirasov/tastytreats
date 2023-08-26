@@ -42,11 +42,6 @@ export function openPopupById(id) {
 export function closeOllPopups() {
   refs.allCustomPopups.forEach(popup => {
     if (popup.classList.contains('is-open')) {
-      if (popup.id === 'recepie') {
-        setTimeout(() => {
-          popup.querySelector('.js-backend-info').innerHTML = '';
-        }, 350);
-      }
       popup.classList.remove('is-open');
     }
   });
@@ -55,11 +50,21 @@ export function closeOllPopups() {
 export function scrollbarModify() {
   const scrollbarWidth = window.innerWidth - document.querySelector('main').offsetWidth;
   refs.body.style.paddingRight = scrollbarWidth + 'px';
+  refs.fixedElements.forEach(fix => {
+    if (!fix.classList.contains('custom-popup')) {
+      fix.style.paddingRight = scrollbarWidth + 'px';
+    }
+  });
 }
 
 export function scrollbarReset() {
   setTimeout(() => {
     refs.body.style.paddingRight = '0px';
+    refs.fixedElements.forEach(fix => {
+      if (!fix.classList.contains('custom-popup')) {
+        fix.style.paddingRight = '0px';
+      }
+    });
     refs.body.classList.remove('locked');
   }, 400);
 }

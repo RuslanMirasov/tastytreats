@@ -1,3 +1,13 @@
+$backdrop_background: $gray20;
+$popup_background: $white;
+$popup_border_radius: 15px;
+$popup_padding: 40px;
+$popup_padding_tablet: 32px;
+$popup_padding_mobil: 20px;
+
+$request_width: 440px;
+$info_width: 340px;
+
 .custom-popup {
   display: flex;
   flex-wrap: wrap;
@@ -14,12 +24,12 @@
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: $backdrop_background;
+  padding: 40px 20px;
   transition: 400ms;
   &.is-open {
     visibility: visible;
-    z-index: 5000;
+    z-index: 1000;
     opacity: 1;
     .custom-popup__content {
       transform: translate(0px, 0px);
@@ -30,43 +40,56 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 14px;
     width: 100%;
     position: relative;
-    background: #fff;
-    border-radius: 15px;
     transform: translate(0px, 20px);
     transition: 400ms;
+    background: $popup_background;
+    border-radius: $popup_border_radius;
+
+    @media screen and (min-width: 1280px) {
+      padding: $popup_padding;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      padding: $popup_padding_tablet;
+    }
+    @media screen and (max-width: 767px) {
+      padding: $popup_padding_mobil;
+    }
+
+    .forBtn {
+      margin-top: 10px;
+    }
+    .form {
+      margin-top: 14px;
+    }
   }
 }
 
-#order .custom-popup__content {
-  max-width: 440px;
-  padding: 40px;
+#order .custom-popup__content,
+#request .custom-popup__content {
+  max-width: $request_width;
 }
 
 #error .custom-popup__content {
   background-color: rgb(196, 28, 28);
+  .title--popup,
+  .subtitle--popup {
+    color: $white;
+    text-align: center;
+  }
   .popup__close::before,
   .popup__close::after {
-    background: #fff;
+    background: $white;
   }
 }
 
 #error .custom-popup__content,
-#info .custom-popup__content,
-#ok .custom-popup__content {
-  max-width: 420px;
-  padding: 32px;
-}
-
-#recepie .custom-popup__content {
-  max-width: 532px;
-  padding: 32px;
-}
-
-#reiting .custom-popup__content {
-  max-width: 424px;
-  padding: 32px;
+#info .custom-popup__content {
+  max-width: $info_width;
+  text-align: center;
+  padding: 38px 32px 32px 32px;
 }
 
 #loading .custom-popup__content {
@@ -76,6 +99,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .popup__close {
@@ -116,44 +140,6 @@
   }
 }
 
-.custom-popup__title {
-  display: block;
-  width: 100%;
-  color: $black_text;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.22222;
-  text-transform: uppercase;
-  &.red {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 22px;
-  }
-  &.green {
-    font-size: 22px;
-    text-align: center;
-    color: $color;
-  }
-}
-
-.custom-popup__subtitle.red {
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-.custom-popup__subtitle {
-  display: block;
-  width: 100%;
-  color: $black_text;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.3;
-  margin-top: 14px;
-  text-align: center;
-}
-
 .loader {
   display: block;
   width: 50px;
@@ -166,24 +152,7 @@
   animation: 800ms linear 0s infinite rotate;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @media screen and (max-width: 530px) {
-  #order .custom-popup__content,
-  #recepie .custom-popup__content,
-  #error .custom-popup__content,
-  #ok .custom-popup__content,
-  #info .custom-popup__content,
-  #reiting .custom-popup__content {
-    padding: 32px 20px;
-  }
   #loading .custom-popup__content {
     width: 80px;
     height: 80px;
@@ -197,40 +166,4 @@
     border-right: 2px solid $color;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
   }
-}
-
-body.dark-theme .tag-item {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .ingredients-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .custom-popup {
-  background-color: #4647447d;
-}
-
-body.dark-theme .custom-popup__content {
-  background: #050505;
-}
-
-body.dark-theme .popup__close:before,
-body.dark-theme .popup__close:after {
-  background: #fff;
-}
-
-body.dark-theme .custom-popup .label .label__text {
-  opacity: 0.5;
-}
-
-body.dark-theme .rating-value,
-body.dark-theme .custom-popup__subtitle,
-body.dark-theme .ingredients-item div:last-child,
-body.dark-theme .instructions-text,
-body.dark-theme .modal-text,
-body.dark-theme .custom-popup .label .label__text,
-body.dark-theme .backend-info h2,
-body.dark-theme .custom-popup__title {
-  color: #fff;
 }

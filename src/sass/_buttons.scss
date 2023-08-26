@@ -52,6 +52,12 @@ $button_gray_color_hover: $white_text;
   width: 100%;
   align-items: center;
   gap: 16px;
+  &.ta--c {
+    justify-content: center;
+  }
+  &.ta--r {
+    justify-content: flex-end;
+  }
   @media screen and (max-width: 767px) {
     gap: 14px;
   }
@@ -143,6 +149,7 @@ $button_gray_color_hover: $white_text;
     background: $button_background_hover;
     color: $button_color_hover;
   }
+
   &:disabled {
     opacity: 0.4;
     pointer-events: none;
