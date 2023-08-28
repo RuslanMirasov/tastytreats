@@ -27,6 +27,8 @@ $header_height_mobil: 60px;
     min-height: $header_height;
     @media screen and (max-width: 767px) {
       min-height: $header_height_mobil;
+      max-width: 768px;
+      padding: 0px 20px;
     }
   }
   &.fix {

@@ -5,7 +5,7 @@ window.addEventListener('keyup', closePopupByEsc);
 function closePopupByEsc(e) {
   if (e.key === 'Escape' && refs.body.classList.contains('locked')) {
     closeOllPopups();
-    scrollbarReset();
+    setTimeout(bodyUnlock, 250);
   }
 }
 
@@ -26,15 +26,14 @@ export function popupOpen(e) {
 export function popupClose(e) {
   if (e.target.classList.contains('js-popup-close') || e.target.classList.contains('custom-popup')) {
     closeOllPopups();
-    scrollbarReset();
+    setTimeout(bodyUnlock, 250);
   }
 }
 
 export function openPopupById(id) {
   closeOllPopups();
   if (!refs.body.classList.contains('locked')) {
-    scrollbarModify();
-    refs.body.classList.add('locked');
+    bodyLock();
   }
   document.getElementById(id).classList.add('is-open');
 }
@@ -43,30 +42,32 @@ export function closeOllPopups() {
   refs.allCustomPopups.forEach(popup => {
     if (popup.classList.contains('is-open')) {
       popup.classList.remove('is-open');
+      setTimeout(() => {
+        popup.scrollTo(0, 0);
+      }, 320);
     }
   });
 }
 
-export function scrollbarModify() {
-  const scrollbarWidth = window.innerWidth - document.querySelector('main').offsetWidth;
-  refs.body.style.paddingRight = scrollbarWidth + 'px';
+export function bodyLock() {
+  const scrollbarWidth = window.innerWidth - refs.main.offsetWidth;
+  refs.body.classList.add('locked');
+  refs.body.style.paddingRight = `${scrollbarWidth}px`;
   refs.fixedElements.forEach(fix => {
     if (!fix.classList.contains('custom-popup')) {
-      fix.style.paddingRight = scrollbarWidth + 'px';
+      fix.style.paddingRight = `${scrollbarWidth}px`;
     }
   });
 }
 
-export function scrollbarReset() {
-  setTimeout(() => {
-    refs.body.style.paddingRight = '0px';
-    refs.fixedElements.forEach(fix => {
-      if (!fix.classList.contains('custom-popup')) {
-        fix.style.paddingRight = '0px';
-      }
-    });
-    refs.body.classList.remove('locked');
-  }, 400);
+export function bodyUnlock() {
+  refs.body.classList.remove('locked');
+  refs.body.style.paddingRight = `0px`;
+  refs.fixedElements.forEach(fix => {
+    if (!fix.classList.contains('custom-popup')) {
+      fix.style.paddingRight = `0px`;
+    }
+  });
 }
 
 export function alertError(title, subtitle) {

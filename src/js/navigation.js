@@ -1,5 +1,18 @@
 import { refs } from '../js/refs';
-import { scrollbarModify, scrollbarReset } from '../js/popup';
+import { bodyLock, bodyUnlock } from '../js/popup';
+
+markCurrentLink();
+
+function markCurrentLink() {
+  if (refs.menuLinks.length > 0 && refs.currentPath !== '/') {
+    refs.menuLinks.forEach(link => {
+      link.classList.remove('current');
+      if (link.getAttribute('href') === refs.currentPath) {
+        link.classList.add('current');
+      }
+    });
+  }
+}
 
 if (refs.burger) {
   refs.burger.addEventListener('click', menuToggle);
@@ -19,38 +32,20 @@ refs.menuBackdrop.addEventListener('click', e => {
     if (e.target.classList.contains('menuArrow')) {
       e.target.classList.toggle('is-hovered');
       e.target.closest('li').querySelector('ul').classList.toggle('is-hovered');
-      const submenu = e.target.closest('li').querySelector('ul');
-      if (submenu.classList.contains('is-hovered')) {
-        //открываем
-      } else {
-        //закрываем
-      }
+      const activeSubmenuChildren = e.target.closest('li').querySelector('ul').querySelectorAll('.is-hovered');
+      activeSubmenuChildren.forEach(submenu => {
+        submenu.classList.remove('is-hovered');
+      });
     }
   }
 });
 
 function menuToggle() {
-  scrollbarCheck();
   refs.menuBackdrop.classList.toggle('is-open');
   refs.burger.classList.toggle('is-open');
-  refs.body.classList.toggle('locked');
-}
-
-function scrollbarCheck() {
   if (!refs.body.classList.contains('locked')) {
-    const scrollbarWidth = window.innerWidth - refs.main.offsetWidth;
-    refs.main.paddingRight = `${scrollbarWidth}px`;
-    refs.fixedElements.forEach(fix => {
-      if (!fix.classList.contains('custom-popup')) {
-        fix.style.paddingRight = `${scrollbarWidth}px`;
-      }
-    });
-  } else {
-    refs.main.paddingRight = `0px`;
-    refs.fixedElements.forEach(fix => {
-      if (!fix.classList.contains('custom-popup')) {
-        fix.style.paddingRight = `0px`;
-      }
-    });
+    bodyLock();
+    return;
   }
+  setTimeout(bodyUnlock, 700);
 }

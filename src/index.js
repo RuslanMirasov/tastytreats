@@ -6,3 +6,4 @@ import './js/popup.js';
 import './js/form.js';
 import './js/phone-mask.js';
 import './js/scroll-to-block.js';
+import './js/theme-switcher.js';

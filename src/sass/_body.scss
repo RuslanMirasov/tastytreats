@@ -8,10 +8,6 @@
   overflow-y: auto;
   color: $black_text;
   background: $white_text;
-  &.dark {
-    color: $white;
-    background: #161616;
-  }
   &.locked {
     overflow-y: hidden;
   }

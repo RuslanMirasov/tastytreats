@@ -6,7 +6,7 @@
         <nav class="menu">
           <ul class="menu__list">
             <li>
-              <a href="./">Home</a>
+              <a href="./" class="current">Home</a>
               <ul>
                 <li><a href="./">Submenu number 1</a></li>
                 <li>
@@ -14,7 +14,15 @@
                   <ul>
                     <li><a href="./">Option 1</a></li>
                     <li><a href="./">Option 2</a></li>
-                    <li><a href="./">Option 3</a></li>
+                    <li>
+                      <a href="./">Option 3</a>
+                      <ul>
+                        <li><a href="./">Option 1</a></li>
+                        <li><a href="./">Option 2</a></li>
+                        <li><a href="./">Option 3</a></li>
+                        <li><a href="./">Option 4</a></li>
+                      </ul>
+                    </li>
                     <li><a href="./">Option 4</a></li>
                   </ul>
                 </li>
@@ -22,9 +30,34 @@
                 <li><a href="./">Submenu number 4</a></li>
               </ul>
             </li>
-            <li><a href="./">Favorites</a></li>
+            <li>
+              <a href="./favorites.html">Favorites</a>
+              <ul>
+                <li><a href="./">Submenu number 1</a></li>
+                <li>
+                  <a href="./">Submenu number 2</a>
+                  <ul>
+                    <li><a href="./">Option 1</a></li>
+                    <li><a href="./">Option 2</a></li>
+                    <li>
+                      <a href="./">Option 3</a>
+                      <ul>
+                        <li><a href="./">Option 2</a></li>
+                        <li><a href="./">Option 3</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./">Option 4</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="./">Option 4</a></li>
+                  </ul>
+                </li>
+                <li><a href="./">Submenu number 3</a></li>
+                <li><a href="./">Submenu number 4</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
+        <button type="button" class="theme-switcher">Theme switcher</button>
       </div>
     </div>
     <!--logo-->
@@ -34,7 +67,7 @@
     </a>
     <!--buttons-->
     <div class="header__buttons">
-      <label><input type="checkbox" name="theme-switcher" class="theme-switcher" /></label>
+      <button type="button" class="theme-switcher">Theme switcher</button>
       <button type="button" class="burger"><span>burger</span></button>
     </div>
   </div>
