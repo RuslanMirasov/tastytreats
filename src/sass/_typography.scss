@@ -34,6 +34,14 @@ $subtitle_font_size_mobil: 14px;
 $subtitle_line_height: 1.5;
 $subtitle_font_weight: 400;
 
+.titleBox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  gap: 16px;
+}
+
 .title {
   display: block;
   width: 100%;
@@ -153,4 +161,6 @@ $subtitle_font_weight: 400;
 
 .italic {
   font-style: italic;
+  font-family: 'regular', serif;
+  font-weight: 400;
 }

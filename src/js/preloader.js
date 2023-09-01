@@ -3,8 +3,10 @@ import throttle from 'lodash.throttle';
 import { animate } from './scroll-animation';
 
 window.addEventListener('load', function () {
-  removePreloader();
-  animate();
+  setTimeout(() => {
+    removePreloader();
+    animate();
+  }, 350);
 });
 
 mainPaddingTop();
