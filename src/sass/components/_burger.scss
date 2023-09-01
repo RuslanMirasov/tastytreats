@@ -4,44 +4,51 @@
   align-items: center;
   position: relative;
   z-index: 3;
-  width: 32px;
+  width: 24px;
   height: 24px;
   order: 3;
   cursor: pointer;
   &:before,
-  &:after,
-  span {
+  &:after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     background: $black_text;
     transition: 400ms ease-out;
-    font-size: 0px;
   }
   span {
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    transition: 400ms ease-out;
+    font-size: 0px;
+    background: none;
+    border-top: 2px solid $black_text;
+    border-bottom: 2px solid $black_text;
     opacity: 1;
     transform: translate(0%, 0%);
   }
   &:before {
-    transform: rotate(0deg) translate(0%, 10px);
+    transform: rotate(0deg) translate(0%, 9px);
   }
   &:after {
-    transform: rotate(0deg) translate(0%, -10px);
+    transform: rotate(0deg) translate(0%, -9px);
   }
   &.is-open {
     span {
       opacity: 0;
       transform: translate(100%, 0%);
-      background: $black_text;
+      border-top: 2px solid $white_text;
+      border-bottom: 2px solid $white_text;
     }
     &:before {
       transform: rotate(45deg) translate(0%, 0%);
-      background: $black_text;
+      background: $white_text;
     }
     &:after {
       transform: rotate(-45deg) translate(0%, 0%);
-      background: $black_text;
+      background: $white_text;
     }
   }
   @media screen and (max-width: 767px) {

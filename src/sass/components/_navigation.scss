@@ -19,6 +19,9 @@ $submenu_link_background_hover: $color;
 
 .menu-backdrop {
   width: auto;
+  .theme-switcher {
+    display: none;
+  }
   @media screen and (max-width: 767px) {
     display: block;
     width: 100%;
@@ -36,6 +39,12 @@ $submenu_link_background_hover: $color;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 320ms linear 400ms, visibility 320ms linear 400ms;
+    .theme-switcher {
+      display: flex;
+      &.active {
+        border: 1px solid $white;
+      }
+    }
     &.is-open {
       opacity: 1;
       visibility: visible;
@@ -53,18 +62,21 @@ $submenu_link_background_hover: $color;
   flex-wrap: wrap;
   height: auto;
   @media screen and (max-width: 767px) {
+    flex-wrap: nowrap;
+    width: 60%;
+    min-height: 100%;
+    min-width: 200px;
+    height: 100%;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    align-content: flex-start;
+    align-content: space-between;
     padding: 0px 20px 20px 20px;
     position: absolute;
     right: 0px;
     top: 0px;
-    width: 100%;
-    min-height: 100%;
-    max-width: 380px;
     z-index: 1;
-    background: $white;
+    background: $color;
     box-shadow: 0px 0px 24px rgba(105, 105, 105, 0.5);
     transform: translate(101%, 0%);
     transition: transform 500ms cubic-bezier(0.39, 0.25, 0.18, 0.85);
@@ -80,7 +92,7 @@ $submenu_link_background_hover: $color;
       left: 0px;
       top: 0px;
       position: sticky;
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 53%);
+      background: linear-gradient(0deg, #fff0 0%, #9bb537 53%);
       z-index: 4;
     }
   }
@@ -98,7 +110,8 @@ $submenu_link_background_hover: $color;
 @media screen and (max-width: 767px) {
   .menu {
     width: 100%;
-    min-height: 70%;
+    height: auto;
+    min-height: 60%;
   }
 
   .menu__list {
@@ -116,14 +129,17 @@ $submenu_link_background_hover: $color;
       a {
         display: block;
         position: relative;
-        color: inherit;
-        width: auto;
-        font-size: 24px;
+        color: $white;
+        width: 100%;
+        font-size: 12px;
         line-height: 1.2;
         background: rgba(0, 0, 0, 0);
         transition: background-color 250ms;
-        padding: 16px 0px;
-        padding-right: 40px;
+        padding: 8px 0px;
+        text-align: center;
+        &.current {
+          font-family: 'medium';
+        }
       }
       ul {
         overflow: hidden;
@@ -215,6 +231,25 @@ $submenu_link_background_hover: $color;
         padding: 24px 0px;
         cursor: pointer;
         transition: $cubic;
+        &:before {
+          content: '';
+          width: 0%;
+          height: 1px;
+          background: $color;
+          position: absolute;
+          left: auto;
+          right: 0px;
+          top: 62%;
+          transition: width $cubic;
+        }
+        &:hover,
+        &:focus {
+          &:before {
+            width: 100%;
+            left: 0px;
+            right: auto;
+          }
+        }
         &.current {
           color: $menu_link_color_hover;
         }

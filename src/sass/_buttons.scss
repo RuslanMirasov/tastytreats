@@ -94,9 +94,14 @@ $button_gray_color_hover: $white_text;
   }
   /*mobil*/
   @media screen and (max-width: 767px) {
-    height: $button_height_mobil;
-    font-size: $button_fontsize_mobil;
-    padding: $button_padding_mobil;
+    height: $button_height;
+    font-size: $button_fontsize;
+    padding: $button_padding;
+    &.button--border {
+      height: $button_height_mobil;
+      font-size: $button_fontsize_mobil;
+      padding: $button_padding_mobil;
+    }
   }
 
   &.full {
