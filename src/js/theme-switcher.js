@@ -1,7 +1,5 @@
 import { refs } from '../js/refs';
 
-console.log(refs.switcher.length);
-
 if (refs.switcher.length > 0) {
   swicherDefaultPosition();
   refs.switcher.forEach(switcherBtn => {
