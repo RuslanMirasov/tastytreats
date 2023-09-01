@@ -1,31 +1,15 @@
 import Swiper from 'swiper/swiper-bundle.min.mjs';
 import 'swiper/swiper-bundle.min.css';
-import axios from 'axios';
-import { alertError } from '../js/popup';
+import { refs } from '../js/refs';
+import { getEvents } from '../js/axios';
 
-const EVENTS_API = 'https://tasty-treats-backend.p.goit.global/api/events';
-const heroSlider = document.querySelector('.js-events');
-
-if (heroSlider) {
-  initEvents();
-}
+initEvents();
 
 async function initEvents() {
-  try {
-    const eventsData = await fetchEvents();
+  const eventsData = await getEvents();
+  if (refs.heroSlider && eventsData) {
     renderEvents(eventsData);
-    initSlider();
-  } catch (error) {
-    showError(error);
-  }
-}
-
-async function fetchEvents() {
-  try {
-    const response = await axios.get(EVENTS_API);
-    return response.data;
-  } catch (error) {
-    showError(error);
+    initEventsSwiper();
   }
 }
 
@@ -62,23 +46,19 @@ function renderEvents(events) {
     </div>
     `
   );
-  heroSlider.insertAdjacentHTML('afterbegin', sliderMarkup.join(''));
+  refs.heroSlider.insertAdjacentHTML('afterbegin', sliderMarkup.join(''));
 }
 
-function showError(error) {
-  alertError(error.request.statusText, error.message);
-}
-
-function initSlider() {
+function initEventsSwiper() {
   new Swiper('.swiper-hero', {
     loop: true,
     speed: 1000,
     slidesPerView: 1,
     spaceBetween: 8,
-    // autoplay: {
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.js-hero-pagination',
       clickable: true,

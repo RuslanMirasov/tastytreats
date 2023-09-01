@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
   setTimeout(() => {
     removePreloader();
     animate();
-  }, 350);
+  }, 250);
 });
 
 mainPaddingTop();

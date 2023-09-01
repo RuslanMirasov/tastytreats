@@ -2,7 +2,6 @@ export const refs = {
   body: document.querySelector('.body'),
   main: document.querySelector('.main'),
   header: document.querySelector('.header'),
-  dataBase: 'https://tasty-treats-backend.p.goit.global/api',
 
   //menu
   burger: document.querySelector('.burger'),
@@ -26,4 +25,8 @@ export const refs = {
   //scroll to block
   scrollLinks: document.querySelectorAll('[data-scrollto]'),
   amimateElements: document.querySelectorAll('[data-animation]'),
+
+  //HERO
+  heroSlider: document.querySelector('.js-events'),
+  orderForm: document.querySelector('.form--order'),
 };
