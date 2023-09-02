@@ -1,0 +1,83 @@
+.section--catalog {
+  padding: 40px 0px 80px 0px;
+  overflow: hidden;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    .sidebar,
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 42px;
+    }
+    .sidebar {
+      width: 21.76%;
+      .button--gray.big {
+        margin-top: 24px;
+      }
+    }
+    .content {
+      width: 72.408%;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    .container {
+      .sidebar {
+        width: 25%;
+      }
+      .content {
+        width: 70.456%;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .container {
+      .sidebar {
+        width: 100%;
+        margin-bottom: 40px;
+        .button--gray.big {
+          margin-top: 0px;
+          max-width: 176px;
+        }
+      }
+      .content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.form--filter {
+  .label--search {
+    max-width: 278px;
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+  .label--time {
+    max-width: 126px;
+    @media screen and (max-width: 767px) {
+      max-width: 47.765%;
+    }
+    @media screen and (max-width: 359px) {
+      max-width: 100%;
+    }
+  }
+  .label--area {
+    max-width: 142px;
+    @media screen and (max-width: 767px) {
+      max-width: 47.765%;
+    }
+    @media screen and (max-width: 359px) {
+      max-width: 100%;
+    }
+  }
+  .label--ingredients {
+    max-width: 188px;
+    @media screen and (max-width: 359px) {
+      max-width: 100%;
+    }
+  }
+}

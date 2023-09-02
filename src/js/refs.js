@@ -19,6 +19,7 @@ export const refs = {
 
   //forms
   inputs: document.querySelectorAll('.input'),
+  selectInputs: document.querySelectorAll('select'),
   requestForm: document.querySelectorAll('.form--request'),
   addErrorText: true,
 

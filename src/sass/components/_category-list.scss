@@ -1,0 +1,35 @@
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 416px;
+  position: relative;
+  gap: 24px;
+  @media screen and (max-width: 767px) {
+    height: 198px;
+    gap: 18px;
+  }
+  li {
+    width: 100%;
+    button {
+      display: inline-flex;
+      color: $gray30;
+      font-family: 'medium';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.25;
+      transition: $cubic;
+      &:hover,
+      &:focus,
+      &.active {
+        color: $color;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
