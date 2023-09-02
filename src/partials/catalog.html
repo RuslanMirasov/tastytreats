@@ -1,28 +1,8 @@
 <section class="section section--catalog">
   <h2 hidden>Catalog</h2>
   <div class="container">
-    <div class="sidebar">
-      <button type="button" class="button button--gray big full active" data-ollcategories>All categories</button>
-      <ul class="category-list custom-scrollbar">
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category class="active">sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-        <li><button type="button" data-category>sdsdsd</button></li>
-      </ul>
-    </div>
-    <div class="content">
+    <div class="sidebar" data-animation="fade-bottom" data-delay="0"></div>
+    <div class="content" data-animation="fade-bottom" data-delay="0">
       <form action="#!" method="POST" class="form form--filter" novalidate>
         <label class="label label--search">
           <span class="label__text">Search</span>
@@ -36,73 +16,19 @@
             </span>
           </span>
         </label>
-        <label class="label label--time">
-          <span class="label__text">Time</span>
-          <span class="label__input">
-            <select name="time" class="input" autocomplete="true">
-              <option data-placeholder="true"></option>
-              <option value="40">40 min</option>
-              <option value="50">50 min</option>
-              <option value="10">10 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-            </select>
-          </span>
-        </label>
-        <label class="label label--area">
-          <span class="label__text">Area</span>
-          <span class="label__input">
-            <select name="area" class="input" autocomplete="true">
-              <option data-placeholder="true"></option>
-              <option value="40">40 min</option>
-              <option value="50">50 min</option>
-              <option value="10">10 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-            </select>
-          </span>
-        </label>
-        <label class="label label--ingredients">
-          <span class="label__text">Ingredients</span>
-          <span class="label__input">
-            <select name="ingredients" class="input" autocomplete="true">
-              <option data-placeholder="true"></option>
-              <option value="40">40 min</option>
-              <option value="50">50 min</option>
-              <option value="10">10 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-              <option value="30">30 min</option>
-            </select>
-          </span>
-        </label>
       </form>
+      <ul class="catalog" data-recipes>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+        <li class="catalog__item"><article class="recipe"></article></li>
+      </ul>
     </div>
+    <div class="pagination"></div>
   </div>
 </section>

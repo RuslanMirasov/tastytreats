@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 20px;
+  background: $gray10;
+  border-radius: 8px;
+  margin-top: 40px;
+}

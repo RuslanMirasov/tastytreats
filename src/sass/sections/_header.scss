@@ -20,7 +20,7 @@ $header_height_mobil: auto;
   transition: background 300ms ease-out 0ms, box-shadow 300ms ease-out 0ms, padding-top 300ms ease-out 0ms;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
   padding-top: 20px;
-  z-index: 10;
+  z-index: 10001;
   .container {
     display: flex;
     flex-wrap: nowrap;

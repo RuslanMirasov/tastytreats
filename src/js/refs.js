@@ -2,6 +2,9 @@ export const refs = {
   body: document.querySelector('.body'),
   main: document.querySelector('.main'),
   header: document.querySelector('.header'),
+  sidebar: document.querySelector('.sidebar'),
+  catalogFilter: document.querySelector('.form--filter'),
+  db: 'https://tasty-treats-backend.p.goit.global/api',
 
   //menu
   burger: document.querySelector('.burger'),
@@ -19,8 +22,6 @@ export const refs = {
 
   //forms
   inputs: document.querySelectorAll('.input'),
-  selectInputs: document.querySelectorAll('select'),
-  requestForm: document.querySelectorAll('.form--request'),
   addErrorText: true,
 
   //scroll to block
@@ -31,3 +32,20 @@ export const refs = {
   heroSlider: document.querySelector('.js-events'),
   orderForm: document.querySelector('.form--order'),
 };
+
+export function formatDescription(description, desctop, tablet, mobil) {
+  let maxWidth = 0;
+  if (document.documentElement.clientWidth < 768) {
+    maxWidth = mobil;
+  } else if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
+    maxWidth = tablet;
+  } else {
+    maxWidth = desctop;
+  }
+  return description.length <= maxWidth ? description : description.slice(0, maxWidth) + ' ...';
+}
+
+export function uppercaseFirstLetter(str) {
+  if (!str) return str;
+  return str[0].toUpperCase() + str.slice(1);
+}

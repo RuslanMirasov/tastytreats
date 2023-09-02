@@ -5,6 +5,7 @@ import { animate } from './scroll-animation';
 window.addEventListener('load', function () {
   setTimeout(() => {
     removePreloader();
+
     animate();
   }, 250);
 });

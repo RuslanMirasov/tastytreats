@@ -147,6 +147,10 @@ $input_border_radius: 15px;
 
 /*SELECT INPUTS*/
 
+.ss-main.input {
+  padding-right: 12px;
+}
+
 .ss-main:focus {
   box-shadow: none;
 }
@@ -225,25 +229,10 @@ $input_border_radius: 15px;
 .ss-single {
   padding: 0 !important;
   margin: 0 !important;
+  text-wrap: nowrap;
+  overflow: hidden;
+  max-width: 122px;
 }
 .ss-main .ss-deselect {
   display: none;
-}
-
-.custom-scrollbar {
-  &::-webkit-scrollbar {
-    width: 8px;
-    border-radius: 12px;
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0);
-    border-radius: 12px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $gray10;
-    border-radius: 12px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: $gray20;
-  }
 }

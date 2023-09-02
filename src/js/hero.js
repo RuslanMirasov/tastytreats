@@ -1,12 +1,12 @@
 import Swiper from 'swiper/swiper-bundle.min.mjs';
 import 'swiper/swiper-bundle.min.css';
 import { refs } from '../js/refs';
-import { getEvents } from '../js/axios';
+import { getFromDB } from '../js/axios';
 
 initEvents();
 
 async function initEvents() {
-  const eventsData = await getEvents();
+  const eventsData = await getFromDB(`${refs.db}/events`);
   if (refs.heroSlider && eventsData) {
     renderEvents(eventsData);
     initEventsSwiper();

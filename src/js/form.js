@@ -1,23 +1,9 @@
-import SlimSelect from 'slim-select';
 import throttle from 'lodash.throttle';
 import { refs } from '../js/refs';
 import { orderSend } from '../js/axios';
 
 if (refs.orderForm) {
   refs.orderForm.addEventListener('submit', onOrderFormSubmit);
-}
-
-if (refs.selectInputs.length > 0) {
-  refs.selectInputs.forEach(select => {
-    new SlimSelect({
-      select: select,
-      settings: {
-        showSearch: false,
-        placeholderText: '',
-        allowDeselect: true,
-      },
-    });
-  });
 }
 
 async function onOrderFormSubmit(e) {

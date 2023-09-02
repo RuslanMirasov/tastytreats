@@ -18,7 +18,7 @@ $info_width: 340px;
   height: 100%;
   left: 0px;
   top: 0px;
-  z-index: -1;
+  z-index: 50000;
   opacity: 0;
   visibility: hidden;
   overflow-x: hidden;
@@ -29,7 +29,6 @@ $info_width: 340px;
   transition: 400ms;
   &.is-open {
     visibility: visible;
-    z-index: 1000;
     opacity: 1;
     .custom-popup__content {
       transform: translate(0px, 0px);

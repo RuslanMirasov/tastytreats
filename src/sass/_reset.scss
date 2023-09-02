@@ -71,3 +71,22 @@ ul,
 ol {
   list-style: none;
 }
+
+.custom-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $gray10;
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $gray20;
+  }
+}
