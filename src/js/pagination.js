@@ -3,8 +3,8 @@ import Pagination from 'tui-pagination';
 const paginationEl = document.querySelector('.pagination');
 const catalogPagination = new Pagination(paginationEl, {
   totalItems: 50,
-  itemsPerPage: 9,
-  visiblePages: 5,
+  itemsPerPage: 5,
+  visiblePages: 4,
   template: {
     page: '<a href="#" class="tui-page-btn">{{page}}</a>',
     currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',

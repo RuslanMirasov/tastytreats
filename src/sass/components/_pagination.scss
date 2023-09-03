@@ -6,7 +6,30 @@
   align-items: center;
   align-content: center;
   padding: 20px;
-  background: $gray10;
+  border: 1px solid $gray10;
   border-radius: 8px;
   margin-top: 40px;
+  gap: 10px;
+}
+
+.tui-page-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid $gray30;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+  color: $black_text;
+  font-size: 18px;
+  font-family: 'semibold';
+  line-height: 1;
+  transition: 250ms $cubic;
+  font-size: 0px;
+  &.tui-is-selected {
+    background: $color;
+    border: 1px solid $color;
+  }
 }
