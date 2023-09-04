@@ -50,14 +50,13 @@ export async function orderSend(form) {
 // RATING SEND
 export async function ratingSend(form) {
   openPopupById('loading');
-  const formData = {
-    rate: Number(form.rating.value),
-    email: form.email.value,
-  };
   axios({
     method: 'PATCH',
     url: `${RATING_API}/${form.id.value}/rating`,
-    data: formData,
+    data: {
+      rate: Number(form.rating.value),
+      email: form.email.value,
+    },
     headers: {
       'Content-Type': 'application/json',
     },
