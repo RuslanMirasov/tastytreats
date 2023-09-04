@@ -10,10 +10,46 @@
   <body class="body">
     <!-- HEADER -->
     <include src="./partials/header.html"></include>
-
     <main class="main">
+      <!-- Hero -->
+      <section class="section">
+        <div class="container">
+          <div class="favorites-hero">
+            <picture>
+              <source srcset="./img/fav-decktop.webp 1x, ./img/fav-decktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp" />
+              <source srcset="./img/fav-decktop.jpg 1x, ./img/fav-decktop@2x.jpg 2x" media="(min-width: 1280px)" />
+              <source srcset="./img/fav-tablet.webp 1x, ./img/fav-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp" />
+              <source srcset="./img/fav-tablet.jpg 1x, ./img/fav-tablet@2x.jpg 2x" media="(min-width: 768px)" />
+              <source srcset="./img/fav-mob.webp 1x, ./img/fav-mob@2x.webp 2x" media="(max-width: 767px)" type="image/webp" />
+              <source srcset="./img/fav-mob.jpg 1x, ./img/fav-mob@2x.jpg 2x" media="(max-width: 767px)" />
+              <img src="./img/fav-decktop.jpg" alt="rice and fish dish" width="335" height="516" />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <!-- Favorites -->
       <section class="section section--favorites">
         <div class="container">
+          <!-- Slider main container -->
+          <div class="swiper-favorite-filter">
+            <div class="swiper swiper-favorite">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide"><button type="button" class="button button--gray active">All categories</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Beef</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Breakfast</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Chicken</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Dessert</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Goat</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Miscellaneous</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Pasta</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Pork</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Seafood</button></li>
+                <li class="swiper-slide"><button type="button" class="button button--gray">Side</button></li>
+              </ul>
+            </div>
+          </div>
+
           <ul class="catalog catalog--favorites" data-recipes>
             <li class="catalog__item"><article class="recipe"></article></li>
             <li class="catalog__item"><article class="recipe"></article></li>

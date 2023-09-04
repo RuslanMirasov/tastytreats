@@ -1,9 +1,23 @@
 import throttle from 'lodash.throttle';
 import { refs } from '../js/refs';
-import { orderSend } from '../js/axios';
+import { orderSend, ratingSend } from '../js/axios';
 
 if (refs.orderForm) {
   refs.orderForm.addEventListener('submit', onOrderFormSubmit);
+}
+
+if (refs.ratingForm) {
+  refs.ratingForm.addEventListener('submit', onRatingFormSubmit);
+}
+
+async function onRatingFormSubmit(e) {
+  e.preventDefault();
+  const ratingForm = this;
+  const ratingValid = formValidation(ratingForm);
+  if (ratingValid === true) {
+    console.log(ratingForm.rating.value);
+    ratingSend(ratingForm);
+  }
 }
 
 async function onOrderFormSubmit(e) {

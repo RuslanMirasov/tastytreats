@@ -22,7 +22,6 @@ async function renderTimeInput() {
     for (let i = 5; i <= 150; i += 5) {
       timeValues.push(i);
     }
-    console.log(timeValues);
     const timeInputMarkup = `
        <label class="label label--time" for="time">
           <span class="label__text">Time</span>

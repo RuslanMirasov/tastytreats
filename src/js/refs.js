@@ -22,6 +22,8 @@ export const refs = {
 
   //forms
   inputs: document.querySelectorAll('.input'),
+  orderForm: document.querySelector('.form--order'),
+  ratingForm: document.querySelector('.form--rating'),
   addErrorText: true,
 
   //scroll to block
@@ -30,7 +32,6 @@ export const refs = {
 
   //HERO
   heroSlider: document.querySelector('.js-events'),
-  orderForm: document.querySelector('.form--order'),
 };
 
 export function formatDescription(description, desctop, tablet, mobil) {

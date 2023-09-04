@@ -1,0 +1,46 @@
+.section--favorites {
+  padding-bottom: 100px;
+  overflow: hidden;
+  .pagination {
+    width: 100%;
+  }
+}
+
+.favorites-hero {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  margin-top: 24px;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 1;
+  picture,
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media screen and (min-width: 768px) {
+    height: 356px;
+  }
+  @media screen and (max-width: 767px) {
+    height: 516px;
+  }
+}
+
+.swiper-favorite-filter {
+  width: 100%;
+  margin: 64px 0px 32px 0px;
+}
+
+.swiper.swiper-favorite {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  .swiper-slide {
+    width: auto !important;
+    .button {
+      padding: 14px 18px;
+    }
+  }
+}

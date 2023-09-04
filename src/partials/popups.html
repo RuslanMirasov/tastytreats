@@ -34,6 +34,40 @@
   </div>
 </div>
 
+<div class="custom-popup" id="rating">
+  <div class="custom-popup__content">
+    <button type="button" class="popup__close js-popup-close">close</button>
+    <h3 class="title title--h3">Rating</h3>
+    <form action="#!" method="POST" class="form form--rating" novalidate>
+      <input type="hidden" name="id" value="6462a8f74c3d0ddd28897fb8" />
+
+      <label class="label">
+        <div class="rating rating--big rating--set">
+          <div class="rating__value">0.0</div>
+          <div class="rating__body">
+            <div class="rating__active"></div>
+            <div class="rating__items">
+              <input class="rating__item" type="radio" value="1" name="rating" />
+              <input class="rating__item" type="radio" value="2" name="rating" />
+              <input class="rating__item" type="radio" value="3" name="rating" />
+              <input class="rating__item" type="radio" value="4" name="rating" />
+              <input class="rating__item" type="radio" value="5" name="rating" />
+            </div>
+          </div>
+        </div>
+      </label>
+      <label class="label">
+        <span class="label__input">
+          <input type="email" class="input" name="email" required autocomplete="true" placeholder="Enter E-mail" />
+        </span>
+      </label>
+      <div class="forBtn ta--c">
+        <button type="submit" class="button full">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <div class="preloader">
   <div class="preloader__content">
     <svg class="icon-search"><use href="./img/icons.svg#logo"></use></svg>

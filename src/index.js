@@ -11,3 +11,5 @@ import './js/theme-switcher.js';
 import './js/hero.js';
 import './js/sidebar.js';
 import './js/select-inputs.js';
+import './js/favorites.js';
+import './js/rating.js';

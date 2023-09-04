@@ -67,8 +67,23 @@ $info_width: 340px;
 }
 
 #order .custom-popup__content,
-#request .custom-popup__content {
+#rating .custom-popup__content {
   max-width: $request_width;
+}
+
+#rating {
+  .title {
+    text-transform: capitalize;
+  }
+  .form {
+    margin-top: 0px;
+  }
+  .rating {
+    margin-bottom: 10px;
+  }
+  .forBtn {
+    margin-top: 0px;
+  }
 }
 
 #error .custom-popup__content {
